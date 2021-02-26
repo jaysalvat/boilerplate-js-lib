@@ -1,0 +1,46 @@
+{
+  "name": "project-name",
+  "version": "0.0.0",
+  "description": "",
+  "main": "./build/project-name.cjs.min.cjs",
+  "module": "./build/project-name.esm.min.js",
+  "browser": "./build/project-name.min.js",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "node ./scripts/clean.cjs",
+    "dev": "rollup -c -w",
+    "init": "node ./scripts/init.cjs",
+    "lint:fix": "eslint . --fix",
+    "lint": "eslint .",
+    "prebuild": "npm run clean",
+    "release:major": "node ./scripts/release.cjs major",
+    "release:minor": "node ./scripts/release.cjs minor",
+    "release:patch": "node ./scripts/release.cjs patch",
+    "release": "node ./scripts/release.cjs patch",
+    "test:browser": "open http://localhost:5500/test/index.html && light-server -s . -p 5500",
+    "test:watch": "mocha ./test/test.cli.js --parallel --watch",
+    "test": "mocha ./test/test.cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaysalvat/project-name.git"
+  },
+  "keywords": [],
+  "author": "Jay Salvat",
+  "license": "ISC",
+  "devDependencies": {
+    "@jaysalvat/eslint-config": "^1.0.5",
+    "chai": "^4.3.0",
+    "eslint": "^7.20.0",
+    "light-server": "^2.9.1",
+    "mocha": "^8.3.0",
+    "rollup": "^2.39.0",
+    "rollup-plugin-filesize": "^9.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "shelljs": "^0.8.4"
+  },
+  "dependencies": {
+    "case": "^1.6.3"
+  }
+}
