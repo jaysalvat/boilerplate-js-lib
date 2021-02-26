@@ -1,3 +1,9 @@
-import Lib from './Lib.js'
+class Lib {
+  constructor() {}
+
+  method() {
+    return true
+  }
+}
 
 export default Lib
