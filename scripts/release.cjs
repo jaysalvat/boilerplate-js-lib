@@ -1,7 +1,6 @@
 
 const sh = require('./shared.cjs')
 
-const root = __dirname + '/../'
 const version = process.argv[2] || 'patch'
 const branch = sh.read('git rev-parse --abbrev-ref HEAD')
 const dirty = !!sh.read('git diff --stat')
@@ -27,5 +26,5 @@ sh.exec('npm run build')
 sh.info('Publish to NPM')
 sh.exec('npm publish')
 
-sh.info('Commit and push to Github')
+sh.info('Push to Github')
 sh.exec('git push origin master --tags')
